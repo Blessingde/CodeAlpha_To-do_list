@@ -11,12 +11,12 @@ function allTasks() {
     let allLists = document.querySelectorAll(".list")
     if (allLists.length>0) {
         todoList.style.marginTop = "20px"
-        clearButton.style.pointerEvents = "auto"
+        clearButton.style. pointerEvents = "auto"
         return;
         
     }
-    todoList.style.marginTop = "0px"
-    clearButton.style.pointerEvents = "none"
+    todoList.style.marginTop = "0px";
+    clearButton.style. pointerEvents = "none"
 }
 
 inputField.addEventListener('keyup', (e)=>{
@@ -26,7 +26,7 @@ inputField.addEventListener('keyup', (e)=>{
        let liTag = `<li class="list pending" onclick="handleStatus(this)">
        <input type="checkbox">
        <span class="task">${inputValue}</span>
-       <i class="fa-regular fa-pen-to-square edit" onclick="editTask(this)"></i>
+
        <i class="fa-solid fa-trash trash" onclick="deleteTask(this)"></i>
    </li>`
    todoList.insertAdjacentHTML("beforeend", liTag)
@@ -43,15 +43,8 @@ function handleStatus(e){
 }
 
 function deleteTask(e) {
-   e.parentElement.remove();
-   allTasks
+    e.parentElement.remove()
 }
-
-function editTask(e) {
-
-    inputField.value = "liTag"
-}
-
 clearButton.addEventListener("click", ()=>{
     todoList.innerHTML = "";
     allTasks();
